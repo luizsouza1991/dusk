@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\pessoaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/cadastro', function () {
+    return view('cadastro');
+});
+
+Route::post('/cadastrar', [pessoaController::class, 'store'])->name('cadastrar');
