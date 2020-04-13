@@ -9,6 +9,7 @@ class pessoaController extends Controller
 {
     public function store(Request $request)
     {
+        dd($request->all());
         if (count($request->all()) > 0) {
             $pessoa = Pessoa::create($request->all());
         }

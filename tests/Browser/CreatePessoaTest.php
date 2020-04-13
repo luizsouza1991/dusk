@@ -18,12 +18,17 @@ class CreatePessoaTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/cadastro')
-                    // ->type('nome', 'Luiz')
-                    // ->press('Salvar')
-                    // ->assertPathIs('/')
-                    ->assertSee('Salvar')
+                    ->type('nome', 'Teste 1')
+                    ->radio('sexo', 'Mulher')
+                    ->select('linguagem')
+                    ->type('descricao', 'Texto de exemplo')
                     ->press('Salvar')
-                    ->visit('/');
+                    ->visit('/')
+                    ->assertSee('Laravel');
+                    // ->assertSee('Salvar')
+                    // ->press('Salvar')
+                    // ->visit('/');
+                    // Arr::random(['0', '1', '2', '3', '4', '5', '6'])
         });
     }
 }

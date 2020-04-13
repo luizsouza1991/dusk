@@ -19,7 +19,7 @@ abstract class DuskTestCase extends BaseTestCase
      */
     public static function prepare()
     {
-        static::useChromedriver('/usr/local/bin/chromedriver');
+        // static::useChromedriver('/usr/local/bin/chromedriver');
         static::startChromeDriver();
     }
 
@@ -33,7 +33,10 @@ abstract class DuskTestCase extends BaseTestCase
         $options = (new ChromeOptions)->addArguments([
             '--disable-gpu',
             '--headless',
+            '--window-size=1920,1080',
+            '--no-sandbox',
             // '--no-sandbox',
+            '--verbose'
             // 'window-size=1920,1080'
         ]);
 

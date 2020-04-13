@@ -1953,16 +1953,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      campos: {}
+      campos: {},
+      linguagens: [{
+        'nome': 'Java'
+      }, {
+        'nome': 'PHP'
+      }, {
+        'nome': 'Python'
+      }],
+      sexos: [{
+        'nome': 'Homem'
+      }, {
+        'nome': 'Mulher'
+      }]
     };
   },
   methods: {
     submit: function submit() {
       axios.post('/cadastrar', this.campos).then(function (res) {
-        console.log('Criado');
+        alert(res.data.message);
       });
     }
   }
@@ -37390,6 +37422,8 @@ var render = function() {
   return _c("div", [
     _c("form", { ref: "formulario" }, [
       _c("div", { staticClass: "form-group" }, [
+        _c("label", [_vm._v("Nome")]),
+        _vm._v(" "),
         _c("input", {
           directives: [
             {
@@ -37408,6 +37442,117 @@ var render = function() {
                 return
               }
               _vm.$set(_vm.campos, "nome", $event.target.value)
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
+        _c("label", [_vm._v("Sexo")]),
+        _c("br"),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.campos.sexo,
+              expression: "campos.sexo"
+            }
+          ],
+          attrs: { type: "radio", value: "Homem" },
+          domProps: { checked: _vm._q(_vm.campos.sexo, "Homem") },
+          on: {
+            change: function($event) {
+              return _vm.$set(_vm.campos, "sexo", "Homem")
+            }
+          }
+        }),
+        _vm._v(" Homem\n            "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.campos.sexo,
+              expression: "campos.sexo"
+            }
+          ],
+          attrs: { type: "radio", value: "Mulher" },
+          domProps: { checked: _vm._q(_vm.campos.sexo, "Mulher") },
+          on: {
+            change: function($event) {
+              return _vm.$set(_vm.campos, "sexo", "Mulher")
+            }
+          }
+        }),
+        _vm._v(" Mulher\n            ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
+        _c("label", [_vm._v("Linguagem preferida")]),
+        _vm._v(" "),
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.campos.linguagem,
+                expression: "campos.linguagem"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "text", id: "linguagem", name: "linguagem" },
+            on: {
+              change: function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.$set(
+                  _vm.campos,
+                  "linguagem",
+                  $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                )
+              }
+            }
+          },
+          _vm._l(_vm.linguagens, function(linguagem) {
+            return _c("option", { domProps: { value: linguagem.nome } }, [
+              _vm._v(_vm._s(linguagem.nome))
+            ])
+          }),
+          0
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
+        _c("label", { attrs: { for: "" } }, [_vm._v("Discorra sobre você")]),
+        _vm._v(" "),
+        _c("textarea", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.campos.descricao,
+              expression: "campos.descricao"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: { name: "descricao", id: "", cols: "30", rows: "10" },
+          domProps: { value: _vm.campos.descricao },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.campos, "descricao", $event.target.value)
             }
           }
         })

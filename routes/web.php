@@ -26,4 +26,4 @@ Route::get('/cadastro', function () {
     return view('cadastro');
 });
 
-Route::post('/cadastrar', [pessoaController::class, 'store'])->name('cadastrar');
+Route::get('/cadastrar', [pessoaController::class, 'store'])->name('cadastrar');
