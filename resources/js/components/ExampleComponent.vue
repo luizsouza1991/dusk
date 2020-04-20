@@ -3,10 +3,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Example Component</div>
+                    <!-- <div class="card-header">Página inicial</div> -->
 
                     <div class="card-body">
-                        I'm an example component.
+                        {{ detalhes.firstname }}
                     </div>
                 </div>
             </div>
@@ -16,6 +16,14 @@
 
 <script>
     export default {
+        data() {
+            return {
+                detalhes: {
+                    firstname: 'Luiz',
+                    lastname: 'Souza'
+                }
+            }
+        },
         mounted() {
             console.log('Component mounted.')
         }

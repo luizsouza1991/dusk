@@ -15,9 +15,16 @@
                     @endif
 
                     You are logged in!
+
+                    <span id="teste"></span>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    setTimeout(() => {
+        document.getElementById('teste').innerHTML = 'Luiz';
+    }, 2000)
+</script>
 @endsection

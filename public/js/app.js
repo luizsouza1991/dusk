@@ -1925,6 +1925,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      detalhes: {
+        firstname: 'Luiz',
+        lastname: 'Souza'
+      }
+    };
+  },
   mounted: function mounted() {
     console.log('Component mounted.');
   }
@@ -1941,8 +1949,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -37372,32 +37378,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-md-8" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _vm._v(
+              "\n                    " +
+                _vm._s(_vm.detalhes.firstname) +
+                "\n                "
+            )
           ])
         ])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -37445,48 +37442,6 @@ var render = function() {
             }
           }
         })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-group" }, [
-        _c("label", [_vm._v("Sexo")]),
-        _c("br"),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.campos.sexo,
-              expression: "campos.sexo"
-            }
-          ],
-          attrs: { type: "radio", value: "Homem" },
-          domProps: { checked: _vm._q(_vm.campos.sexo, "Homem") },
-          on: {
-            change: function($event) {
-              return _vm.$set(_vm.campos, "sexo", "Homem")
-            }
-          }
-        }),
-        _vm._v(" Homem\n            "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.campos.sexo,
-              expression: "campos.sexo"
-            }
-          ],
-          attrs: { type: "radio", value: "Mulher" },
-          domProps: { checked: _vm._q(_vm.campos.sexo, "Mulher") },
-          on: {
-            change: function($event) {
-              return _vm.$set(_vm.campos, "sexo", "Mulher")
-            }
-          }
-        }),
-        _vm._v(" Mulher\n            ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "form-group" }, [
@@ -37563,6 +37518,7 @@ var render = function() {
           "button",
           {
             staticClass: "btn btn-success",
+            attrs: { id: "btn-salvar" },
             on: {
               click: function($event) {
                 $event.preventDefault()

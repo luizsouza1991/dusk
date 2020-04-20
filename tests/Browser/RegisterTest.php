@@ -8,22 +8,24 @@ use Tests\DuskTestCase;
 
 class RegisterTest extends DuskTestCase
 {
+    use DatabaseMigrations;
     /**
      * A Dusk test example.
      * @group registro
      * @return void
      */
-    public function testExample()
+    public function testRegistro()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('register')
+            $browser->visit('/register')
                     ->assertSee('Register')
                     ->type('name', 'Luiz')
                     ->type('email', 'luiz@flexpeak.com')
-                    ->type('password', 'secret')
-                    ->type('password_confirmation', 'secret')
+                    ->type('password', 'password')
+                    ->type('password_confirmation', 'password')
                     ->press('Register')
-                    ->visit('/home');
+                    ->assertPathIs('/home')
+                    ->assertSee('Dashboard');
         });
     }
 }

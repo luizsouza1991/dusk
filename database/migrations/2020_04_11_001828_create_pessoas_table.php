@@ -16,7 +16,6 @@ class CreatePessoasTable extends Migration
         Schema::create('pessoas', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->date('data_nascimento');
             $table->enum('sexo', ['Homem', 'Mulher']);
             $table->string('linguagem');
             $table->text('descricao');

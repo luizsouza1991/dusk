@@ -27,3 +27,6 @@ Route::get('/cadastro', function () {
 });
 
 Route::get('/cadastrar', [pessoaController::class, 'store'])->name('cadastrar');
+Route::get('/foo', function () {
+    return view('teste-modal');
+});

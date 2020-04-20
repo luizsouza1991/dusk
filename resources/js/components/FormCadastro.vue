@@ -6,14 +6,12 @@
                 <input type="text" id="nome" v-model="campos.nome" name="nome" class="form-control">
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label>Sexo</label><br>
-                <input type="radio" v-model="campos.sexo" value="Homem"> Homem
-                <input type="radio" v-model="campos.sexo" value="Mulher"> Mulher
-                <!-- <span v-for="sexo in sexos">
+                <span v-for="sexo in sexos">
                     <input type="radio" v-model="campos.sexo" :value="campos.sexo" name="sexo"> {{ sexo.nome }}
-                </span> -->
-            </div>
+                </span>
+            </div> -->
             <div class="form-group">
                 <label>Linguagem preferida</label>
                 <select type="text" id="linguagem" v-model="campos.linguagem" name="linguagem" class="form-control">
@@ -25,7 +23,7 @@
                 <textarea class="form-control" name="descricao" id="" cols="30" rows="10" v-model="campos.descricao"></textarea>
             </div>
             <div class="form-group">
-                <button @click.prevent="submit" class="btn btn-success">Salvar</button>
+                <button @click.prevent="submit" id="btn-salvar" class="btn btn-success">Salvar</button>
             </div>
         </form>
     </div>
