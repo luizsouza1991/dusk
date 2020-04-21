@@ -38,10 +38,8 @@ class TarefasTest extends DuskTestCase
 
     public function testRemoveTask()
     {
-        $task = factory(Task::class)->create([
-
-        ]);
-        $this->browse(function (Browser $browser) {
+        $task = factory(Task::class)->create();
+        $this->browse(function (Browser $browser) use ($task) {
             $browser->visit('/bar')
                 ->waitForText('Tarefas')
                 ->click("@remove-task1")
