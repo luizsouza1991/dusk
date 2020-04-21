@@ -6670,7 +6670,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.input-create[data-v-8f69a68c] {\n    border: 1px solid #dddddd;\n    width: 70%;\n    margin-left: 10px;\n    border-radius: 3px;\n}\nul[data-v-8f69a68c] {\n    list-style: none;\n}\n", ""]);
+exports.push([module.i, "\n.input-create[data-v-8f69a68c] {\n    border: 1px solid #dddddd;\n    width: 70%;\n    margin-left: 10px;\n    border-radius: 3px;\n}\nul[data-v-8f69a68c] {\n    list-style: none;\n}\n.line-through[data-v-8f69a68c] {\n    text-decoration: line-through;\n}\n", ""]);
 
 // exports
 

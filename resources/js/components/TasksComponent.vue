@@ -97,4 +97,7 @@ export default {
     ul {
         list-style: none;
     }
+    .line-through {
+        text-decoration: line-through;
+    }
 </style>
