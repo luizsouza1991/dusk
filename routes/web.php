@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\pessoaController;
+use App\Task;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,4 +30,11 @@ Route::get('/cadastro', function () {
 Route::get('/cadastrar', [pessoaController::class, 'store'])->name('cadastrar');
 Route::get('/foo', function () {
     return view('teste-modal');
+});
+
+Route::get('/bar', function () {
+    $tasks = Task::all();
+    return view('tasks', [
+        'tasks' => $tasks
+    ]);
 });
